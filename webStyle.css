@@ -8,7 +8,7 @@
 .sidenav {
     height: 100%;
     width: 0;
-    background-color: #111;
+    background-color: rgb(50,50,50);
     padding-top: 5px;
     z-index: 1;
     transition: 0.5s;
@@ -22,6 +22,8 @@
     color: rgb(240,240,240);
     display: block;
     transition: 0.3s;
+    margin: 0 0 10px 0;
+    cursor: pointer;
 }
 
 #lines {
@@ -35,4 +37,9 @@
     color: rgb(240,240,240);
     position: absolute;
     right: 15px;
+}
+
+#top {
+    font-size: 35px;
+    color: #6495ED;
 }

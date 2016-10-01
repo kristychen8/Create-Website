@@ -10,12 +10,18 @@
     width: 0;
     background-color: #111;
     padding-top: 5px;
+    z-index: 1;
+    transition: 0.5s;
+    position: fixed;
+    overflow-x: hidden;
 }
 
 .sidenav li {
     padding-left: 15px;
     font-size: 20px;
     color: rgb(240,240,240);
+    display: block;
+    transition: 0.3s;
 }
 
 #lines {

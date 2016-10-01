@@ -19,11 +19,9 @@
 		<!-- Sidebar -->
 		<nav class = "navbar" id = "sidebar-wrapper" role = "navigation">
 			<ul class = "nav sidebar-nav">
-				<span id = "x">&times; </span>
-				<li>
-					<a href = "#">
-						Create Your Own Website
-					</a>
+				<span id = "x">&times; </sp>
+				<li id="top">
+					Create Your Own Website
 				</li>
 				<li id = "header">
 					Header
@@ -43,11 +41,11 @@
 				<li id = "table">
 					Table
 				</li>
-				<li id = "done">
-					Generate Website
-				</li>
-				<li id = "reset">
+				<li id = "reset" class = "sidebarBottom">
 					Reset Website
+				</li>
+				<li id = "done" class = "sidebarBottom">
+					Generate Website
 				</li>
 			</ul>
 		</nav>
@@ -57,44 +55,75 @@
 	</div> <!-- close wrapper div -->
 
 	<!-- MODAL -->
-	<div id = "modal">
 
-		<!-- Header -->
-		<div id = "headerModal">
-			<center>
-			<h1> Add Header </h1>
-			<hr>
-			<form action="header.txt">
-			Name for header: <input type="text" name="headerInput"><br>
-			Image for header: <input type="text" name="pictureLink"><br>
-			</form>
-			<button type="button">Ok</button>
-			<button type="button">Cancel</button>
-			</center>
-		</div> <!-- close headerModal -->
+	<!-- Header -->
+	<div id= "header-modal" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+					<h1> Add Header </h1>
+					</center>
+				</div> <!-- /.modal-header -->
+				<div class= "modal-body">
+					Name for header: <input type="text" name="headerInput"><br>
+					Image for header: <input type="text" name="pictureLink"><br>
+				</div> <!-- /.modal-body -->
+				<div class = "modal-footer">
+					<button type="button" class="cancel" data-dismiss="modal">Cancel</button>
+					<button type="button" class="ok">Ok</button>
+				</div> <!-- /.modal-footer -->
+			</div> <!-- /.modal-content -->
+		</div> <!-- /.modal-dialog -->
+	</div> <!-- /.modal fade -->
 
-		<!-- Pictures/Text -->
-		<div id = "picTextModal">
-			<center>
-			<h1> Add Image and Text </h1>
-			<hr>
-			<form action = "picText.txt">
-				Images & Text for the image: <br>
-				<textarea rows="10" cols="100"></textarea> <br>
-			<button type="button">Ok</button>
-			<button type="button">Cancel</button>
-			</center>
-		</div> <!-- close picTextModal -->
+
+	<!-- Pictures/Text -->
+	<div id= "picTextModal" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+					<h1> Add Image and Text </h1>
+					</center>
+				</div> <!-- /.modal-header -->
+				<div class= "modal-body">
+					Link for image: <input type="text" name="linkPicText"><br>
+					Description for image: <input type="text" name="descripPicText"><br>
+					<button type="button" class="add">Add</button>
+				</div> <!-- /.modal-body -->
+				<div class = "modal-footer">
+					<button type="button" class="cancel" data-dismiss="modal">Cancel</button>
+					<button type="button" class="ok">Ok</button>
+				</div> <!-- /.modal-footer -->
+			</div> <!-- /.modal-content -->
+		</div> <!-- /.modal-dialog -->
+	</div> <!-- /.modal fade -->
 
 		<!-- List -->
-		<div id = "listModal">
-			<center>
-			<h1> Add List </h1>
-			<hr>
-			<button type="button">Ok</button>
-			<button type="button">Cancel</button>
-			</center>
-		</div>
+	<div id= "listModal" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+					<h1> Add Image and Text </h1>
+					</center>
+				</div> <!-- /.modal-header -->
+				<div class= "modal-body">
+					Link for image: <input type="text" name="linkPicText"><br>
+					Description for image: <input type="text" name="descripPicText"><br>
+					<button type="button" class="add">Add</button>
+				</div> <!-- /.modal-body -->
+				<div class = "modal-footer">
+					<button type="button" class="cancel" data-dismiss="modal">Cancel</button>
+					<button type="button" class="ok">Ok</button>
+				</div> <!-- /.modal-footer -->
+			</div> <!-- /.modal-content -->
+		</div> <!-- /.modal-dialog -->
+	</div> <!-- /.modal fade -->
 
 		<!-- Table -->
 		<div id = "tableModal">

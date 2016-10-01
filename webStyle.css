@@ -1,0 +1,28 @@
+.wrapper {
+    padding-left: 25px;
+    padding-right:25px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    background-color: #111;
+    padding-top: 5px;
+}
+
+.sidenav li {
+    padding-left: 15px;
+    font-size: 20px;
+    color: rgb(240,240,240);
+}
+
+#lines {
+    font-size: 30px;
+}
+
+#x {
+    font-size: 30px;
+    color: rgb(240,240,240);
+}

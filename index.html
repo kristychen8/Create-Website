@@ -73,8 +73,8 @@
 					</center>
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
-					Name for header: <input type="text" name="headerInput"><br><br>
-					Image for header: <input type="text" name="pictureLink"><br>
+					Name for header: <input type="text" id="headerInput"><br><br>
+					Image for header: <input type="text" id="pictureLink"><br>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -96,8 +96,8 @@
 					</center>
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
-					Link for image: <input type="text" name="linkPicText"><br><br>
-					Description for image: <input type="text" name="descripPicText"><br><br>
+					Link for image: <input type="text" id="linkPicText"><br><br>
+					Description for image: <input type="text" id="descripPicText"><br><br>
 					<button type="button" class="btn btn-info">Add</button>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
@@ -119,10 +119,10 @@
 					</center>
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
-					Name of List: <input type="text" name="listName"><br><br>
-					Font Size: <input type="number" name="fontSize" min="1"><br><br>
+					Name of List: <input type="text" id="listName"><br><br>
+					Font Size: <input type="number" id="fontSize" min="1"><br><br>
 					Items for List (separated by a line): <br>
-					<textarea rows="10" cols="80">
+					<textarea rows="10" cols="80" id="items">
 					</textarea>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
@@ -233,8 +233,8 @@
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
 					Choose background:<br><br>
-					<input type="radio" name="gender" value="male"> Color<br>
-  					<input type="radio" name="gender" value="female"> Image: <input type="text" name="radioImageText"><br>
+					<input type="radio" id="color" value="color"> Color<br>
+  					<input type="radio" id="image" value="image"> Image: <input type="text" name="radioImageText"><br>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

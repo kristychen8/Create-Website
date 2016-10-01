@@ -26,9 +26,13 @@
 
 #lines {
     font-size: 30px;
+    cursor: pointer;
 }
 
 #x {
     font-size: 30px;
+    cursor: pointer;
     color: rgb(240,240,240);
+    position: absolute;
+    right: 15px;
 }

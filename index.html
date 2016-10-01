@@ -19,26 +19,28 @@
 		<!-- Sidebar -->
 		<nav class = "navbar" id = "sidebar-wrapper" role = "navigation">
 			<ul class = "nav sidebar-nav">
-				<span id = "x">&times; </sp>
+				<span id = "x">&times; </span>
+				<br><br>
 				<li id="top">
 					Create Your Own Website
 				</li>
-				<li id = "header">
+				<br><br>
+				<li id = "header" class="navList">
 					Header
 				</li>
-				<li id = "navbar">
+				<li id = "navbar" class="navList">
 					Navigation Bar
 				</li>
-				<li id = "bg">
+				<li id = "bg" class="navList">
 					Background
 				</li>
-				<li id = "pictxt">
+				<li id = "pictxt" class="navList">
 					Picture/Text
 				</li>
-				<li id = "list">
+				<li id = "list" class="navList">
 					List
 				</li>
-				<li id = "table">
+				<li id = "table" class="navList">
 					Table
 				</li>
 				<li id = "reset" class = "sidebarBottom">
@@ -57,7 +59,7 @@
 	<!-- MODAL -->
 
 	<!-- Header -->
-	<div id= "header-modal" class="modal fade" tabindex="-1" role="dialog">
+	<div id= "headerModal" class="modal fade" tabindex="-1" role="dialog">
   		<div class="modal-dialog" role="document">
     		<div class="modal-content">
       			<div class="modal-header">
@@ -71,8 +73,8 @@
 					Image for header: <input type="text" name="pictureLink"><br>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
-					<button type="button" class="cancel" data-dismiss="modal">Cancel</button>
-					<button type="button" class="ok">Ok</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success" data-dismiss="modal" id="headerOK">OK</button>
 				</div> <!-- /.modal-footer -->
 			</div> <!-- /.modal-content -->
 		</div> <!-- /.modal-dialog -->
@@ -80,13 +82,13 @@
 
 
 	<!-- Pictures/Text -->
-	<div id= "picTextModal" class="modal fade" tabindex="-1" role="dialog">
+	<div id= "pictxtModal" class="modal fade" tabindex="-1" role="dialog">
   		<div class="modal-dialog" role="document">
     		<div class="modal-content">
       			<div class="modal-header">
       				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<center>
-					<h1> Add Image and Text </h1>
+					<h1> Add Image and Description </h1>
 					</center>
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
@@ -95,37 +97,40 @@
 					<button type="button" class="add">Add</button>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
-					<button type="button" class="cancel" data-dismiss="modal">Cancel</button>
-					<button type="button" class="ok">Ok</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success" data-dismiss="modal" id="pictxtOK">OK</button>
 				</div> <!-- /.modal-footer -->
 			</div> <!-- /.modal-content -->
 		</div> <!-- /.modal-dialog -->
 	</div> <!-- /.modal fade -->
 
 		<!-- List -->
-	<div id= "listModal" class="modal fade" tabindex="-1" role="dialog">
+	<div id= "listModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
   		<div class="modal-dialog" role="document">
     		<div class="modal-content">
       			<div class="modal-header">
       				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<center>
-					<h1> Add Image and Text </h1>
+					<h1> Add a list </h1>
 					</center>
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
-					Link for image: <input type="text" name="linkPicText"><br>
-					Description for image: <input type="text" name="descripPicText"><br>
-					<button type="button" class="add">Add</button>
+					Name of List: <input type="text" name="listName"><br>
+					Font Size: <input type="number" name="fontSize"><br>
+					Items for List (separated by a line): 
+					<textarea rows="10" cols="90">
+					</textarea>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
-					<button type="button" class="cancel" data-dismiss="modal">Cancel</button>
-					<button type="button" class="ok">Ok</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success" data-dismiss="modal" id="listOK">OK</button>
 				</div> <!-- /.modal-footer -->
 			</div> <!-- /.modal-content -->
 		</div> <!-- /.modal-dialog -->
 	</div> <!-- /.modal fade -->
 
 		<!-- Table -->
+		<!--
 		<div id = "tableModal">
 			<center>
 			<h1> Add Table </h1>
@@ -134,28 +139,78 @@
 			<button type="button">Cancel</button>
 			</center>
 		</div>
+		-->
 
-		<!-- Navbar -->
-		<div id = "navModal">
-			<center>
-			<h1> Add Navigation Bar </h1>
-			<hr>
-			<button type="button">Ok</button>
-			<button type="button">Cancel</button>
-			</center>
-		</div>
+	<!-- Navbar -->
+	<div id= "navbarModal" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+					<h1> Add a Navigation Bar </h1>
+					</center>
+				</div> <!-- /.modal-header -->
+				<div class= "modal-body">
+					Select what to add to navigation bar: <br>
+					<select class="ui fluid search dropdown" multiple="">
+						<option value="">Skills</option>
+					<option value="about">About</option>
+					<option value="activities">Activities</option>
+					<option value="adventures">Adventures</option>
+					<option value="blog">Blog</option>
+					<option value="booking">Booking</option>
+					<option value="collection">Collection</option>
+					<option value="contact">Contact</option>
+					<option value="features">Features</option>
+					<option value="gallery">Gallery</option>
+					<option value="home">Home</option>
+					<option value="more">More</option>
+					<option value="music">Music</option>
+					<option value="mywork">My Work</option>
+					<option value="portfolio">Portfolio</option>
+					<option value="pricing">Pricing</option>
+					<option value="reviews">Reviews</option>
+					<option value="shop">Shop</option>
+					<option value="sponsors">Sponsors</option>
+					<option value="themes">Themes</option>
+					<option value="video">Video</option>
+					<option value="workshop">Workshop</option>
+					</select>
+				</div> <!-- /.modal-body -->
+				<div class = "modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success" id="navbarOK">OK</button>
+				</div> <!-- /.modal-footer -->
+			</div> <!-- /.modal-content -->
+		</div> <!-- /.modal-dialog -->
+	</div> <!-- /.modal fade -->
 
 		<!-- background -->
-		<div id = "bgModal">
-			<center>
-			<h1> Add Background </h1>
-			<hr>
-			<button type="button">Ok</button>
-			<button type="button">Cancel</button>
-			</center>
-		</div>
+		<div id= "bgModal" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+					<h1> Add a list </h1>
+					</center>
+				</div> <!-- /.modal-header -->
+				<div class= "modal-body">
+					Name of List: <input type="text" name="listName"><br>
+					Font Size: <input type="number" name="fontSize"><br>
+					Items for List (separated by a line): 
+					<textarea rows="10" cols="100">
+					</textarea>
+				</div> <!-- /.modal-body -->
+				<div class = "modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success" data-dismiss="modal" id="bgOK">OK</button>
+				</div> <!-- /.modal-footer -->
+			</div> <!-- /.modal-content -->
+		</div> <!-- /.modal-dialog -->
+	</div> <!-- /.modal fade -->
 
-	</div>
 	<script src="website.js"></script>
 
 

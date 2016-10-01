@@ -1,3 +1,9 @@
+/**************************************
+
+                SIDEBAR
+
+**************************************/
+
 // hide sidebar at beginning
 $('#sidebarContents').css('width','0');
 
@@ -28,4 +34,17 @@ $('#top').hover(function() {
 // set page to top (clicking top of sidebar)
 $('#top').click(function() {
     $('html body').animate({scrollTop: 0}, 'fast');
+});
+
+
+/**************************************
+
+                MODAL
+
+**************************************/
+$('.ok').click(function() {
+ // READ AND PROCESS INPUT HERE
+});
+$('.navList').click(function() {
+    $('#' + $(this).prop('id') + 'Modal').modal({show:true, backdrop:'static', keyboard:false});
 });

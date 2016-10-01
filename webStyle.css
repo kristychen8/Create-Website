@@ -29,6 +29,7 @@
 #lines {
     font-size: 30px;
     cursor: pointer;
+    position: fixed;
 }
 
 #x {

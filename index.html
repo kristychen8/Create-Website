@@ -1,7 +1,8 @@
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="webStyle.css">
 	<title> Create Your Website </title>
-<script src="//code.jquery.com/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -12,9 +13,9 @@
 
 </head>
 <body>
+	<div class = "wrapper">
 	<div id="sidebar">
-		<span id = "lines">&#9776; </span>
-		<div class="overlay"></div>
+		<div id = "sidebarContents" class="sidenav">
 		<!-- Sidebar -->
 		<nav class = "navbar" id = "sidebar-wrapper" role = "navigation">
 			<ul class = "nav sidebar-nav">
@@ -50,7 +51,84 @@
 				</li>
 			</ul>
 		</nav>
+		</div> <!-- close sidebar contents div -->
+		<span id = "lines">&#9776; </span>
+	</div> <!-- close sidenav div -->
+	</div> <!-- close wrapper div -->
+
+	<!-- MODAL -->
+	<div id = "modal">
+
+		<!-- Header -->
+		<div id = "headerModal">
+			<center>
+			<h1> Add Header </h1>
+			<hr>
+			<form action="header.txt">
+			Name for header: <input type="text" name="headerInput"><br>
+			Image for header: <input type="text" name="pictureLink"><br>
+			</form>
+			<button type="button">Ok</button>
+			<button type="button">Cancel</button>
+			</center>
+		</div> <!-- close headerModal -->
+
+		<!-- Pictures/Text -->
+		<div id = "picTextModal">
+			<center>
+			<h1> Add Image and Text </h1>
+			<hr>
+			<form action = "picText.txt">
+				Images & Text for the image: <br>
+				<textarea rows="10" cols="100"></textarea> <br>
+			<button type="button">Ok</button>
+			<button type="button">Cancel</button>
+			</center>
+		</div> <!-- close picTextModal -->
+
+		<!-- List -->
+		<div id = "listModal">
+			<center>
+			<h1> Add List </h1>
+			<hr>
+			<button type="button">Ok</button>
+			<button type="button">Cancel</button>
+			</center>
+		</div>
+
+		<!-- Table -->
+		<div id = "tableModal">
+			<center>
+			<h1> Add Table </h1>
+			<hr>
+			<button type="button">Ok</button>
+			<button type="button">Cancel</button>
+			</center>
+		</div>
+
+		<!-- Navbar -->
+		<div id = "navModal">
+			<center>
+			<h1> Add Navigation Bar </h1>
+			<hr>
+			<button type="button">Ok</button>
+			<button type="button">Cancel</button>
+			</center>
+		</div>
+
+		<!-- background -->
+		<div id = "bgModal">
+			<center>
+			<h1> Add Background </h1>
+			<hr>
+			<button type="button">Ok</button>
+			<button type="button">Cancel</button>
+			</center>
+		</div>
+
 	</div>
+	<script src="website.js"></script>
+
 
 </body>
 </html>

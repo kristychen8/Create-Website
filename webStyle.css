@@ -39,8 +39,10 @@
     font-size: 30px;
     cursor: pointer;
     position: fixed;
+    background-color: rgb(255,255,255);
     z-index: 3;
 }
+
 
 #x {
     font-size: 30px;

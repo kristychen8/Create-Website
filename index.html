@@ -26,17 +26,17 @@
 					Create Your Own Website
 				</li>
 				<br><br>
-				<li id = "header" class="navList">
-					Section
-				</li>
 				<li id = "navbar" class="navList">
 					Navigation Bar
 				</li>
 				<li id = "bg" class="navList">
 					Background
 				</li>
+				<li id = "header" class="navList">
+					Section
+				</li>
 				<li id = "pictxt" class="navList">
-					Picture/Text
+					Image & Description
 				</li>
 				<li id = "list" class="navList">
 					List
@@ -49,9 +49,7 @@
 				-->
 
 				<br><br><br><br>
-				<li id = "reset" class = "sidebarBottom">
-					Reset Website
-				</li>
+				<li id = "reset" class = "sidebarBottom" data-toggle="popover" data-placement="right" title="Reset?" data-content="Are you sure you want to reset?">Reset Website</li>
 				<li id = "done" class = "sidebarBottom">
 					Generate Website
 				</li>
@@ -97,8 +95,9 @@
 				</div> <!-- /.modal-header -->
 				<div class= "modal-body">
 					Link for image: <input type="text" id="linkPicText" style="width: 400px;"><br><br>
-					Description for image: <input type="text" id="descripPicText" style="width: 400px;"><br><br>
-					<button type="button" class="btn btn-info">Add</button>
+					Description for image: <br>
+					<textarea rows="10" cols="80" id="items">
+					</textarea>
 				</div> <!-- /.modal-body -->
 				<div class = "modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -186,29 +185,28 @@
 				-->
 				<div class="row">
 					<div class = "col-xs-6">
-						<input type="checkbox" value="about"> About<br>
-						<input type="checkbox" value="activities"> Activities<br>
-						<input type="checkbox" value="adventures"> Adventures<br>
-						<input type="checkbox" value="blog"> Blog<br>
-						<input type="checkbox" value="booking"> Booking<br>
-						<input type="checkbox" value="collection"> Collection<br>
-						<input type="checkbox" value="contact"> Contact<br>
-						<input type="checkbox" value="features"> Features<br>
-						<input type="checkbox" value="gallery"> Gallery<br>
-						<input type="checkbox" value="home"> Home<br>
-						<input type="checkbox" value="more"> More<br>
+						<input type="checkbox" value="About"> About<br>
+						<input type="checkbox" value="Activities"> Activities<br>
+						<input type="checkbox" value="Adventures"> Adventures<br>
+						<input type="checkbox" value="Blog"> Blog<br>
+						<input type="checkbox" value="Booking"> Booking<br>
+						<input type="checkbox" value="Contact"> Contact<br>
+						<input type="checkbox" value="Features"> Features<br>
+						<input type="checkbox" value="Gallery"> Gallery<br>
+						<input type="checkbox" value="Home"> Home<br>
+						<input type="checkbox" value="More"> More<br>
 					</div> <!-- /.col-xs-6 -->
 					<div class = "col-xs-6">
-						<input type="checkbox" value="music"> Music<br>
-						<input type="checkbox" value="mywork"> My Work<br>
-						<input type="checkbox" value="portfolio"> Portfolio<br>
-						<input type="checkbox" value="pricing"> Pricing<br>
-						<input type="checkbox" value="reviews"> Reviews<br>
-						<input type="checkbox" value="shop"> Shop<br>
-						<input type="checkbox" value="sponsors"> Sponsors<br>
-						<input type="checkbox" value="themes"> Themes<br>
-						<input type="checkbox" value="video"> Video<br>
-						<input type="checkbox" value="workshop"> Workshop<br>
+						<input type="checkbox" value="Music"> Music<br>
+						<input type="checkbox" value="My Work"> My Work<br>
+						<input type="checkbox" value="Portfolio"> Portfolio<br>
+						<input type="checkbox" value="Pricing"> Pricing<br>
+						<input type="checkbox" value="Reviews"> Reviews<br>
+						<input type="checkbox" value="Shop"> Shop<br>
+						<input type="checkbox" value="Sponsors"> Sponsors<br>
+						<input type="checkbox" value="Themes"> Themes<br>
+						<input type="checkbox" value="Video"> Video<br>
+						<input type="checkbox" value="Workshop"> Workshop<br>
 					</div> <!-- /.col-xs-6 -->
 				</div> <!-- /.row -->
 
@@ -285,6 +283,7 @@
 	</div> <!-- /.modal fade -->
 
 	<script src="website.js"></script>
+	<script src="popupButton.js"></script>
 	</div> <!-- /.sideOptions -->
 	<div id="userContent">
 		<div id="headerUser">

@@ -4,8 +4,9 @@
 
 **************************************/
 
-// hide sidebar at beginning
-$('#sidebarContents').css('width','0');
+// display sidebar at beginning
+$('#sidebarContents').css('width','250px');
+$('#lines').css('z-index', '0');
 
 // opening sidebar
 $('#lines').click(function() {
@@ -84,7 +85,7 @@ $('#headerOK').click(function() {
 	// gif
 	imageSrc = 'https://media.tenor.co/images/87bc727f6e742842f05cfc656a4be118/raw';
     }
-    html = '<div id="headerUserContent" style="position: relative; background: url(' + imageSrc + '); width: 100%; height: ' + height + '";>';
+    html = '<div class="headerUserContent" style="position: relative; background: url(' + imageSrc + '); width: 100%; height: ' + height + '";>';
     html +=  '<p style="color: #7FFF00; font-size: 55px; position: absolute; top: 1em; right: 1em;">' + headerName.substring(0, headerName.length / 2) + '</p>' 
 	+ '<p style="color: #FF00FF; font-size: 55px; position: absolute; bottom: 1em; left: 1em;">' + headerName.substring(headerName.length / 2) + '</p>'
     +'</div>';
@@ -138,11 +139,60 @@ $('#navbarOK').click(function() {
 
     // html for navbar
     var html = '<nav class="navbar navbar-default navbar-fixed-top">'
-    + '<div class="container-fluid">'
+	+ '<div class="container-fluid">'
+	+ '<div class="navbar-header">'
+	+ '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">'
+	+ '<span class="icon-bar"></span>'
+	+ '<span class="icon-bar"></span>'
+	+ '<span class="icon-bar"></span>'
+	+ '</button>'
+	+ '</div>'
 	+ '<div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">'
-	+ '<ul class="nav navbar-nav">'
+	+ '<ul class="nav navbar-nav barNav">'
 	+ listHtml
 	+ '</ul></div></div></nav>'
     $('#navbarUser').append(html);
 });
-		    
+
+// process input for image/text
+$('#pictxtOK').click(function() {
+    // default image
+    var imageSrc = $('#linkPicText').val();
+    if (imageSrc == '' || imageSrc.match(/\.(jpeg|jpg|gif|png)$/) == null) {
+	imageSrc = 'http://www.clipartbest.com/cliparts/bcy/Eeo/bcyEeordi.jpeg';
+    }
+
+    // default text
+    var text = $('#description').val();
+    if (text == undefined) {
+	text = '<b>WATER YOU DOING?</b>';
+    }
+
+    var html = '<div class="picTextContent"><center>'
+	+ '<img src="' + imageSrc + '" alt="Missing out..."'
+	+ '<br><br><br><p style="font-size: 20;">' + text
+	+ '</p><br><br></center></div>';
+    $('#pictxtUser').append(html);
+
+    $('#linkPicText').val('');
+    $('#description').val('');
+});
+
+/**************************************
+
+                OTHER
+
+**************************************/
+//
+$('#list').click(function() {
+    console.log($('#listModal .modal-body').width())
+    setTimeout(function() {
+	$('textarea').css('width', $('#listModal .modal-body').width());
+    }, 500);
+});
+$('#pictxt').click(function() {
+    $('textarea').css('width', $('#pictxtModal .modal-body').width());
+    setTimeout(function() {
+	$('textarea').css('width', $('#pictxtModal .modal-body').width());
+    }, 500);
+});

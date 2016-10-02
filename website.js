@@ -42,6 +42,19 @@ $('#top').click(function() {
 // Generating a website: removes the sidebar option
 $('#done').click(function() {
     $('#sideOptions').remove();
+    var a = window.document.createElement('a');
+    var f = new File([$('html').html()], 'temp.html');
+    
+    a.href = window.URL.createObjectURL(f);
+    
+    a.download = 'temp.html';
+
+    // Append anchor to body.
+    document.body.appendChild(a)
+    a.click();
+
+    // Remove anchor from body
+    document.body.removeChild(a)
 });
 
 // Resetting a website: resets user's work

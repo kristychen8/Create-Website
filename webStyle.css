@@ -1,8 +1,8 @@
 .wrapper {
-    padding-left: 25px;
-    padding-right:25px;
-    padding-top: 15px;
-    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 55px;
+    padding-bottom: 30px;
 }
 
 .sidenav {
@@ -22,7 +22,7 @@
     font-size: 20px;
     color: rgb(240,240,240);
     display: block;
-    transition: 0.3s;
+    transition: 0.2s;
     margin: 0 0 10px 0;
     cursor: pointer;
 }

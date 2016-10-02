@@ -51,6 +51,9 @@ $('#reset').click(function() {
     $('#pictxtUser').empty();
     $('#listUser').empty();
     $('#tableUser').empty();
+
+    $('body').css('background-image', 'none');
+    $('body').css('background-color', 'rgb(255,255,255)');
 });
 
 
@@ -106,3 +109,40 @@ $('#bgOK').click(function() {
 	$('body').css('background-color', color);
     }
 });
+
+// process input for navbar
+$('#navbarOK').click(function() {
+    // reset navbar
+    $('#navbarUser').empty();
+    
+    var allOptions = $('#navbarModal input');
+    var selectedOptionsJQuery = $('#navbarModal input:checked');
+    var selectedOptions = [];
+    for (var k = 0; k < selectedOptionsJQuery.length; k++) {
+	selectedOptions.push(selectedOptionsJQuery[k]);
+    }
+    
+    var notSelectedOptions = [];
+    for (var i = 0; i < allOptions.length; i++) {
+	// if option was not selected, add to not selected array
+	if (selectedOptions.indexOf(allOptions[i]) === -1) {
+	    notSelectedOptions.push(allOptions[i]);
+	}
+    }
+
+    // navbar elements
+    var listHtml = '';
+    for (var j = 0; j < notSelectedOptions.length; j++) {
+	listHtml += '<li><a href="#">' + notSelectedOptions[j].value + '</a></li>';
+    }
+
+    // html for navbar
+    var html = '<nav class="navbar navbar-default navbar-fixed-top">'
+    + '<div class="container-fluid">'
+	+ '<div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">'
+	+ '<ul class="nav navbar-nav">'
+	+ listHtml
+	+ '</ul></div></div></nav>'
+    $('#navbarUser').append(html);
+});
+		    

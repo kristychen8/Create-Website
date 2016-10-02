@@ -164,8 +164,18 @@ $('#pictxtOK').click(function() {
 
     // default text
     var text = $('#description').val();
-    if (text == undefined) {
+    if (text == undefined || text.trim() == '') {
 	text = '<b>WATER YOU DOING?</b>';
+    } else {
+	var splitStrings = text.split(' ');
+	var shuffledStrings = randomize(splitStrings);
+	text = '';
+	for (var i = 0; i < shuffledStrings.length - 1; i++) {
+	    if (shuffledStrings[i] != undefined && shuffledStrings[i].trim() != '') {
+		text += shuffledStrings[i].trim() + " ";
+	    }
+	}
+	text += shuffledStrings[shuffledStrings.length - 1] + ".";
     }
 
     var html = '<div class="picTextContent"><center>'
@@ -178,14 +188,55 @@ $('#pictxtOK').click(function() {
     $('#description').val('');
 });
 
+var names = ["jumbo", "grapes", "skippy", "subtle"];
+// process input for list
+$('#listOK').click(function() {
+    var listName = $('#listName').val();
+    var items = $('#items').val();
+
+    var listString = ''; // name for the list 
+    var itemsString = ''; // list of items
+    
+    if (listName == undefined || listName.trim() == '') {
+	listString = 'Array';
+    } else {
+	var listNameStrings = listName.split(' ');
+	for (var i = 0; i < listNameStrings.length; i++) {
+	    if (i === listNameStrings.length / 2) {
+		listString += names[Math.floor(Math.random() * names.length)] + " ";
+	    }
+	    if (listNameStrings[i] != undefined && listNameStrings[i].trim() != '') {
+		listString += listNameStrings[i].trim() + " ";
+	    }
+	}
+    }
+    if (items == undefined || items.trim() == '') {
+	itemsString = '<li>Vector</li>';
+    } else {
+	var listItems = items.split('\n');
+	var shuffledItems = randomize(listItems);
+	for (var j = 0; j < shuffledItems.length; j++) {
+	    if (shuffledItems[j] != undefined && shuffledItems[j].trim() != '') {
+		var fontSize = Math.floor(Math.random() * 100);
+		itemsString += '<li style="font-size: ' + fontSize + 'px;">' + shuffledItems[j].trim() + '</li>';
+	    }
+	}
+    }
+
+    var html = '<center><h2><i>' + listString + '</i></h2><ul>' + itemsString + '</ul></center>';
+    
+    $('#listUser').append(html);
+    
+    
+});
+
 /**************************************
 
                 OTHER
 
 **************************************/
-//
+// set width for textarea
 $('#list').click(function() {
-    console.log($('#listModal .modal-body').width())
     setTimeout(function() {
 	$('textarea').css('width', $('#listModal .modal-body').width());
     }, 500);
@@ -196,3 +247,18 @@ $('#pictxt').click(function() {
 	$('textarea').css('width', $('#pictxtModal .modal-body').width());
     }, 500);
 });
+
+// returns an array with the original elements shuffled
+function randomize(arr) {
+    var arrCopy = []; // copy of the given array
+    for (var i = 0; i < arr.length; i++) {
+	arrCopy[i] = arr[i];
+    }
+    // randomizes the order
+    var arrTemp = [];
+    while (arrCopy.length > 0) {
+	var ind = Math.floor(Math.random() * arrCopy.length);
+      	arrTemp = arrTemp.concat(arrCopy.splice(ind, 1));
+    }
+    return arrTemp;
+}

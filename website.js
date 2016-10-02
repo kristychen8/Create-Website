@@ -42,9 +42,26 @@ $('#top').click(function() {
                 MODAL
 
 **************************************/
-$('.ok').click(function() {
- // READ AND PROCESS INPUT HERE
-});
+
+// modals for sidebar options
 $('.navList').click(function() {
     $('#' + $(this).prop('id') + 'Modal').modal({show:true, backdrop:'static', keyboard:false});
+});
+
+// process input
+$('#headerOK').click(function() {
+    var headerName = $('#headerInput').val();
+    var imageSrc = $('#pictureLink').val();
+
+    var height = screen.height / 3;
+    var html;
+    html = '<div class="headerUserContent" style="postition: relative; background: url(' + imageSrc + '); width: 100%; height: ' + height + '";>'
+    + '<img src="' + imageSrc + '">'
+	+ '<p style="color: #7FFF00; font-size: 45px; position: absolute; top: 1em; right: 1em;">' + headerName.substring(0, headerName.length / 2) + '</p>' 
+	+ '<p style="color: #FF00FF; font-size: 45px; position: absolute; top: 1em; left: 1em;">' + headerName.substring(headerName.length / 2) + '</p>'
+    +'</div>';
+    $('#headerUser').append(html);
+
+    $('#headerInput').val('');
+    $('#pictureLink').val('');
 });

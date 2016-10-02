@@ -39,6 +39,7 @@
     font-size: 30px;
     cursor: pointer;
     position: fixed;
+    z-index: 3;
 }
 
 #x {

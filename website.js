@@ -45,17 +45,17 @@ $('#done').click(function() {
 });
 
 // Resetting a website: resets user's work
-$('#reset').click(function() {
-    $('#headerUser').empty();
-    $('#navbarUser').empty();
-    $('#bgUser').empty();
-    $('#pictxtUser').empty();
-    $('#listUser').empty();
-    $('#tableUser').empty();
+// $('#reset').click(function() {
+//     $('#headerUser').empty();
+//     $('#navbarUser').empty();
+//     $('#bgUser').empty();
+//     $('#pictxtUser').empty();
+//     $('#listUser').empty();
+//     $('#tableUser').empty();
 
-    $('body').css('background-image', 'none');
-    $('body').css('background-color', 'rgb(255,255,255)');
-});
+//     $('body').css('background-image', 'none');
+//     $('body').css('background-color', 'rgb(255,255,255)');
+// });
 
 
 /**************************************
@@ -67,6 +67,41 @@ $('#reset').click(function() {
 // modals for sidebar options
 $('.navList').click(function() {
     $('#' + $(this).prop('id') + 'Modal').modal({show:true, backdrop:'static', keyboard:false});
+});
+
+// process input for reset
+// different messages
+var messages =["Are you sure you want to reset?", "Are you <b>REALLY</b> sure you want to reset?", 
+"Are you <b><i>100%</i></b> sure you want to reset?", "hi!", "Do you really want to get rid of all your hard work?",
+"Do you think I will let you reset?", "Huh... you're really stubborn. Fine."];
+var counter=0;
+$('#reset').click(function() {
+    counter=0;
+    $('#words').html(messages[counter]);
+
+});
+$('#resetOK').click(function() {
+    if(counter > 5) {
+        $('#headerUser').empty();
+        $('#navbarUser').empty();
+        $('#bgUser').empty();
+        $('#pictxtUser').empty();
+        $('#listUser').empty();
+        $('#tableUser').empty();
+
+        $('body').css('background-image', 'none');
+        $('body').css('background-color', 'rgb(255,255,255)');
+        counter=0;
+    }
+    else {
+        console.log(counter);
+        $('#resetModal').modal("hide");
+        setTimeout(function(){
+        $('#words').html(messages[counter]);
+        $('#resetModal').modal({show:true, backdrop:'static', keyboard:false});
+        }, 400);
+        counter+=1;
+    }
 });
 
 // process input for header

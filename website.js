@@ -36,6 +36,21 @@ $('#top').click(function() {
     $('html body').animate({scrollTop: 0}, 'fast');
 });
 
+// Generating a website: removes the sidebar option
+$('#done').click(function() {
+    $('#sideOptions').remove();
+});
+
+// Resetting a website: resets user's work
+$('#reset').click(function() {
+    $('#headerUser').empty();
+    $('#navbarUser').empty();
+    $('#bgUser').empty();
+    $('#pictxtUser').empty();
+    $('#listUser').empty();
+    $('#tableUser').empty();
+});
+
 
 /**************************************
 
